@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text x='0' y='14'>🚫</text></svg>" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 550px;
+            width: 100%;
+        }
+        h1 {
+            color: #dc3545; /* Red for denial */
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            animation: fadeIn 1s ease-out;
+        }
+        .icon {
+            font-size: 5em; /* Larger icon */
+            color: #dc3545;
+            margin-bottom: 25px;
+            animation: bounceIn 1s ease-out;
+        }
+        p {
+            font-size: 1.15em;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .action-button {
+            display: inline-block;
+            background-color: #007bff; /* Blue for action */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .action-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .contact-info {
+            margin-top: 30px;
+            font-size: 0.95em;
+            color: #777;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Basic Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            80% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🚫</div>
+        <h1>Access Denied!</h1>
+        <p>We've detected unusual activity associated with your login attempt. For your security, access to this resource has been denied.</p>
+        <p>If you believe this is an error, please try logging in again. If the issue persists, kindly contact our support team for assistance.</p>
+        <a href="{{ url_for('login') }}" class="action-button">Try Logging In Again</a>
+        <p class="contact-info">For support, please email us at <a href="mailto:support@yourcompany.com">support@yourcompany.com</a></p>
+    </div>
+</body>
+</html>
